@@ -9,6 +9,8 @@ import {
   ExternalLink,
 } from 'lucide-react';
 
+const githubProfile = 'https://github.com/ruhulamin18';
+
 const Projects = () => {
   const projects = [
     {
@@ -21,7 +23,7 @@ const Projects = () => {
       icon: <Layers size={22} />,
       image:
         'https://images.unsplash.com/photo-1461749280684-dccba630e2f6?w=800&q=80',
-      github: 'https://github.com/ruhulamin18',
+      github: githubProfile,
       live: null,
     },
 
@@ -35,7 +37,7 @@ const Projects = () => {
       icon: <Terminal size={22} />,
       image:
         'https://images.unsplash.com/photo-1522202176988-66273c2fd55f?w=800&q=80',
-      github: null,
+      github: githubProfile,
       live: null,
     },
 
@@ -49,7 +51,7 @@ const Projects = () => {
       icon: <Globe size={22} />,
       image:
         'https://images.unsplash.com/photo-1558494949-ef010cbdcc31?w=800&q=80',
-      github: null,
+      github: githubProfile,
       live: null,
     },
 
@@ -63,7 +65,7 @@ const Projects = () => {
       icon: <Layers size={22} />,
       image:
         'https://images.unsplash.com/photo-1576091160550-2173dba999ef?w=800&q=80',
-      github: null,
+      github: githubProfile,
       live: null,
     },
 
@@ -77,7 +79,7 @@ const Projects = () => {
       icon: <Globe size={22} />,
       image:
         'https://images.unsplash.com/photo-1507842217343-583bb7270b66?w=800&q=80',
-      github: null,
+      github: githubProfile,
       live: null,
     },
 
@@ -91,7 +93,7 @@ const Projects = () => {
       icon: <Terminal size={22} />,
       image:
         'https://images.unsplash.com/photo-1506521781263-d8422e82f27a?w=800&q=80',
-      github: null,
+      github: githubProfile,
       live: null,
     },
 
@@ -105,7 +107,7 @@ const Projects = () => {
       icon: <Layers size={22} />,
       image:
         'https://images.unsplash.com/photo-1556740749-887f6717d7e4?w=800&q=80',
-      github: null,
+      github: githubProfile,
       live: null,
     },
 
@@ -119,7 +121,7 @@ const Projects = () => {
       icon: <Globe size={22} />,
       image:
         'https://images.unsplash.com/photo-1516321318423-f06f85e504b3?w=800&q=80',
-      github: null,
+      github: githubProfile,
       live: null,
     },
   ];

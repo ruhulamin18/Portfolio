@@ -51,6 +51,10 @@ const socialLinks = [
 const Footer = () => {
   const year = new Date().getFullYear();
 
+  const scrollToTop = () => {
+    window.scrollTo({ top: 0, behavior: 'smooth' });
+  };
+
   return (
     <footer className="relative overflow-hidden border-t border-cyan-500/20 bg-slate-950 text-slate-200">
       <div className="pointer-events-none absolute inset-0 bg-[radial-gradient(circle_at_center,rgba(34,211,238,0.10),transparent_35%),linear-gradient(to_right,rgba(148,163,184,0.06)_1px,transparent_1px),linear-gradient(to_bottom,rgba(148,163,184,0.06)_1px,transparent_1px)] bg-[length:auto,42px_42px,42px_42px]" />
@@ -72,13 +76,14 @@ const Footer = () => {
         />
       </div>
 
-      <a
-        href="#home"
+      <button
+        type="button"
+        onClick={scrollToTop}
         aria-label="Back to top"
         className="absolute right-6 top-6 z-20 grid h-10 w-10 place-items-center rounded-lg border border-cyan-300/40 bg-slate-900/80 text-cyan-200 shadow-lg shadow-cyan-950/20 backdrop-blur transition-all hover:-translate-y-0.5 hover:border-cyan-300 hover:bg-cyan-500 hover:text-white"
       >
         <ChevronUp size={20} />
-      </a>
+      </button>
 
       <div className="relative z-10 mx-auto max-w-7xl px-6">
         <div className="relative py-12 text-center md:py-14">
