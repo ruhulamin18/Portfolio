@@ -1,8 +1,10 @@
 import React, { useState, useEffect } from 'react';
 import { motion, AnimatePresence } from 'framer-motion';
-import { Menu, X } from 'lucide-react';
+import { Menu, Moon, Sun, X } from 'lucide-react';
+import { Link, NavLink } from 'react-router-dom';
+import logo from '../assets/logo.png';
 
-const Navbar = () => {
+const Navbar = ({ isDark, onToggleTheme }) => {
   const [isScrolled, setIsScrolled] = useState(false);
   const [isMobileMenuOpen, setIsMobileMenuOpen] = useState(false);
 
@@ -15,81 +17,95 @@ const Navbar = () => {
   }, []);
 
   const navLinks = [
-    { name: 'Home', href: '#home' },
-    { name: 'About', href: '#about' },
-    { name: 'Skills', href: '#skills' },
-    { name: 'Projects', href: '#projects' },
-    { name: 'Contact', href: '#contact' },
+    { name: 'Home', path: '/' },
+    { name: 'Education', path: '/education' },
+    { name: 'Skills', path: '/skills' },
+    { name: 'Experience', path: '/experience' },
+    { name: 'Certificates', path: '/certificates' },
+    { name: 'Projects', path: '/projects' },
+    { name: 'Contact', path: '/contact' },
   ];
-
-  const handleNavClick = (e, href) => {
-    e.preventDefault();
-
-    setIsMobileMenuOpen(false);
-
-    const targetId = href.replace('#', '');
-    const targetEl = document.getElementById(targetId);
-
-    if (targetEl) {
-      setTimeout(() => {
-        targetEl.scrollIntoView({
-          behavior: 'smooth',
-          block: 'start',
-        });
-      }, 100);
-    }
-  };
 
   return (
     <nav
       className={`fixed top-0 left-0 right-0 z-50 transition-all duration-300 ${
         isScrolled
-          ? 'bg-white/90 backdrop-blur-md border-b border-gray-200 shadow-sm py-4'
+          ? 'bg-white/85 backdrop-blur-xl border-b border-slate-200/80 shadow-sm py-4 dark:bg-slate-950/80 dark:border-white/10'
           : 'bg-transparent py-6'
       }`}
     >
       <div className="max-w-7xl mx-auto px-6 flex items-center justify-between">
 
         {/* Logo */}
-        <motion.a
-          href="#home"
-          onClick={(e) => handleNavClick(e, '#home')}
-          initial={{ opacity: 0, x: -20 }}
-          animate={{ opacity: 1, x: 0 }}
-          className="text-2xl font-bold tracking-tight text-gray-900"
-        >
-        </motion.a>
+        <Link to="/" aria-label="Md. Ruhul Amin home">
+          <motion.div
+            initial={{ opacity: 0, x: -20 }}
+            animate={{ opacity: 1, x: 0 }}
+            className="group flex items-center"
+          >
+            <div className="flex h-12 w-20 items-center justify-center overflow-hidden rounded-xl border border-slate-200 bg-white/90 shadow-lg shadow-cyan-900/10 transition-all duration-300 group-hover:-translate-y-0.5 group-hover:border-cyan-400 dark:border-white/10 dark:bg-white/10 dark:shadow-black/20">
+              <img
+                src={logo}
+                alt="Ruhul Amin logo"
+                className="h-full w-full object-cover"
+              />
+            </div>
+          </motion.div>
+        </Link>
 
         {/* Desktop Menu */}
-        <div className="hidden md:flex items-center gap-8">
+        <div className="hidden md:flex items-center gap-5 lg:gap-7">
           {navLinks.map((link, i) => (
-            <motion.a
+            <motion.div
               key={link.name}
-              href={link.href}
-              onClick={(e) => handleNavClick(e, link.href)}
               initial={{ opacity: 0, y: -10 }}
               animate={{ opacity: 1, y: 0 }}
               transition={{ delay: i * 0.1 }}
-              className="text-sm font-medium text-gray-600 hover:text-cyan-500 transition-colors"
             >
-              {link.name}
-            </motion.a>
+              <NavLink
+                to={link.path}
+                className={({ isActive }) =>
+                  `text-sm font-medium transition-colors ${
+                    isActive
+                      ? 'text-cyan-600 dark:text-cyan-300'
+                      : 'text-slate-600 hover:text-cyan-600 dark:text-slate-300 dark:hover:text-cyan-300'
+                  }`
+                }
+              >
+                {link.name}
+              </NavLink>
+            </motion.div>
           ))}
+
+          <button
+            type="button"
+            onClick={onToggleTheme}
+            aria-label="Toggle dark mode"
+            className="grid h-10 w-10 place-items-center rounded-full border border-slate-200 bg-white/80 text-slate-700 shadow-sm transition hover:-translate-y-0.5 hover:border-cyan-300 hover:text-cyan-600 dark:border-white/10 dark:bg-white/10 dark:text-slate-200 dark:hover:text-cyan-300"
+          >
+            {isDark ? <Sun size={18} /> : <Moon size={18} />}
+          </button>
         </div>
 
-        {/* Mobile Toggle */}
-        <button
-          className="md:hidden text-gray-900"
-          onClick={() =>
-            setIsMobileMenuOpen(!isMobileMenuOpen)
-          }
-        >
-          {isMobileMenuOpen ? (
-            <X size={24} />
-          ) : (
-            <Menu size={24} />
-          )}
-        </button>
+        <div className="flex items-center gap-3 md:hidden">
+          <button
+            type="button"
+            onClick={onToggleTheme}
+            aria-label="Toggle dark mode"
+            className="grid h-10 w-10 place-items-center rounded-full border border-slate-200 bg-white/80 text-slate-700 shadow-sm dark:border-white/10 dark:bg-white/10 dark:text-slate-200"
+          >
+            {isDark ? <Sun size={18} /> : <Moon size={18} />}
+          </button>
+
+          {/* Mobile Toggle */}
+          <button
+            className="grid h-10 w-10 place-items-center rounded-full border border-slate-200 bg-white/80 text-slate-900 shadow-sm dark:border-white/10 dark:bg-white/10 dark:text-white"
+            onClick={() => setIsMobileMenuOpen(!isMobileMenuOpen)}
+            aria-label="Toggle menu"
+          >
+            {isMobileMenuOpen ? <X size={22} /> : <Menu size={22} />}
+          </button>
+        </div>
 
       </div>
 
@@ -100,20 +116,24 @@ const Navbar = () => {
             initial={{ opacity: 0, height: 0 }}
             animate={{ opacity: 1, height: 'auto' }}
             exit={{ opacity: 0, height: 0 }}
-            className="md:hidden bg-white border-b border-gray-200 overflow-hidden"
+            className="md:hidden bg-white/95 border-b border-slate-200 overflow-hidden backdrop-blur-xl dark:bg-slate-950/95 dark:border-white/10"
           >
             <div className="flex flex-col p-6 gap-4">
               {navLinks.map((link) => (
-                <a
+                <NavLink
                   key={link.name}
-                  href={link.href}
-                  onClick={(e) =>
-                    handleNavClick(e, link.href)
+                  to={link.path}
+                  onClick={() => setIsMobileMenuOpen(false)}
+                  className={({ isActive }) =>
+                    `text-lg font-medium transition-colors ${
+                      isActive
+                        ? 'text-cyan-600 dark:text-cyan-300'
+                        : 'text-slate-700 hover:text-cyan-600 dark:text-slate-200 dark:hover:text-cyan-300'
+                    }`
                   }
-                  className="text-lg font-medium text-gray-700 hover:text-cyan-500 transition-colors"
                 >
                   {link.name}
-                </a>
+                </NavLink>
               ))}
             </div>
           </motion.div>

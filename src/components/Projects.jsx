@@ -1,5 +1,6 @@
 import React from 'react';
 import { motion } from 'framer-motion';
+import PortfolioBackground from './PortfolioBackground';
 import {
   Terminal,
   Globe,
@@ -11,86 +12,148 @@ import {
 const Projects = () => {
   const projects = [
     {
-      title: 'Student Management System',
-      category: 'Management System',
+      title: 'Personal Portfolio Website',
+      category: 'Frontend Development',
+      status: 'Live-ready',
       description:
-        'A student management application designed to manage student records, attendance, academic information, and profile management efficiently.',
-      tech: ['Python', 'MySQL', 'OOP'],
+        'A modern and responsive portfolio website built using React.js and Tailwind CSS. It showcases my skills, projects, education, and contact information with smooth animations and clean user experience.',
+      tech: ['React.js', 'Tailwind CSS', 'Framer Motion', 'React Router'],
       icon: <Layers size={22} />,
       image:
+        'https://images.unsplash.com/photo-1461749280684-dccba630e2f6?w=800&q=80',
+      github: 'https://github.com/ruhulamin18',
+      live: null,
+    },
+
+    {
+      title: 'Student Management System',
+      category: 'Desktop Application',
+      status: 'Academic',
+      description:
+        'A complete student management solution developed to manage student records, attendance, academic information, and profile management efficiently.',
+      tech: ['Python', 'MySQL', 'OOP'],
+      icon: <Terminal size={22} />,
+      image:
         'https://images.unsplash.com/photo-1522202176988-66273c2fd55f?w=800&q=80',
-      github: '#',
-      live: '#',
+      github: null,
+      live: null,
+    },
+
+    {
+      title: 'Network Topology Design',
+      category: 'Networking',
+      status: 'Cisco lab',
+      description:
+        'Designed and configured an enterprise network topology with routers, multilayer switches, subnetting, VLAN planning, and IP addressing schemes.',
+      tech: ['Networking', 'Cisco', 'Subnetting'],
+      icon: <Globe size={22} />,
+      image:
+        'https://images.unsplash.com/photo-1558494949-ef010cbdcc31?w=800&q=80',
+      github: null,
+      live: null,
+    },
+
+    {
+      title: 'NeuroGuard AI',
+      category: 'Machine Learning',
+      status: 'Healthcare AI',
+      description:
+        'A machine learning-based mortality prediction system for critically ill patients using healthcare datasets, risk analysis, and predictive analytics.',
+      tech: ['Machine Learning', 'Python', 'Healthcare AI'],
+      icon: <Layers size={22} />,
+      image:
+        'https://images.unsplash.com/photo-1576091160550-2173dba999ef?w=800&q=80',
+      github: null,
+      live: null,
     },
 
     {
       title: 'Library Management System',
       category: 'Database Application',
+      status: 'Academic',
       description:
-        'A library management system developed to handle book records, member information, issue and return tracking, and inventory management.',
-      tech: ['Java', 'MySQL', 'Database'],
+        'A database-driven library management system designed to manage books, members, issue-return records, and inventory tracking efficiently.',
+      tech: ['Java', 'MySQL', 'Database Design'],
       icon: <Globe size={22} />,
       image:
         'https://images.unsplash.com/photo-1507842217343-583bb7270b66?w=800&q=80',
-      github: '#',
-      live: '#',
+      github: null,
+      live: null,
     },
 
     {
       title: 'Parking Management System',
-      category: 'Management System',
+      category: 'Software Development',
+      status: 'Academic',
       description:
-        'A parking management system designed to manage vehicle entries, exits, parking slot allocation, and parking records efficiently.',
+        'A parking management application developed to handle vehicle entries, exits, slot allocation, and parking history management effectively.',
       tech: ['Java', 'MySQL', 'OOP'],
       icon: <Terminal size={22} />,
       image:
         'https://images.unsplash.com/photo-1506521781263-d8422e82f27a?w=800&q=80',
-      github: '#',
-      live: '#',
+      github: null,
+      live: null,
     },
 
     {
-      title: 'Personal Portfolio Website',
-      category: 'Web Development',
+      title: 'Mobile Banking User Churn Analysis',
+      category: 'Machine Learning',
+      status: 'Data project',
       description:
-        'A responsive portfolio website showcasing personal information, technical skills, academic achievements, projects, and contact details.',
-      tech: ['React.js', 'JavaScript', 'CSS', 'GitHub'],
+        'A machine learning project focused on predicting customer churn in mobile banking services using data analysis and predictive modeling techniques.',
+      tech: ['Python', 'Machine Learning', 'Data Analysis'],
       icon: <Layers size={22} />,
       image:
-        'https://images.unsplash.com/photo-1461749280684-dccba630e2f6?w=800&q=80',
-      github: 'https://github.com/ruhulamin18',
-      live: '#',
+        'https://images.unsplash.com/photo-1556740749-887f6717d7e4?w=800&q=80',
+      github: null,
+      live: null,
+    },
+
+    {
+      title: 'Logistic Regression Research Project',
+      category: 'Research & Data Science',
+      status: 'Research',
+      description:
+        'A research-oriented project applying Logistic Regression for predictive analysis and classification tasks using real-world datasets.',
+      tech: ['Python', 'Logistic Regression', 'Research'],
+      icon: <Globe size={22} />,
+      image:
+        'https://images.unsplash.com/photo-1516321318423-f06f85e504b3?w=800&q=80',
+      github: null,
+      live: null,
     },
   ];
 
   return (
     <section
       id="projects"
-      className="py-24 bg-white border-y border-gray-200"
+      className="page-shell relative overflow-hidden py-20 bg-slate-50 border-y border-slate-200 dark:bg-slate-950 dark:border-white/10"
     >
-      <div className="max-w-7xl mx-auto px-6">
+      <PortfolioBackground variant="projects" />
+
+      <div className="relative z-10 max-w-7xl mx-auto px-6">
         <motion.div
           initial={{ opacity: 0, y: 20 }}
           whileInView={{ opacity: 1, y: 0 }}
           viewport={{ once: true }}
-          className="text-center mb-16"
+          className="text-center mb-12"
         >
-          <span className="inline-block py-2 px-5 rounded-full bg-cyan-100 border border-cyan-200 text-cyan-600 text-xs font-bold tracking-widest uppercase mb-6">
+          <span className="inline-block py-2 px-4 rounded-full bg-cyan-100 border border-cyan-200 text-cyan-700 text-xs font-bold tracking-widest uppercase mb-5 dark:bg-cyan-400/10 dark:border-cyan-400/30 dark:text-cyan-200">
             My Projects
           </span>
 
-          <h2 className="text-4xl md:text-5xl font-bold mb-6 text-gray-900">
-            Academic & Personal Projects
+          <h2 className="text-4xl md:text-5xl font-bold mb-5 text-slate-950 dark:text-white">
+            Featured Projects
           </h2>
 
-          <p className="text-gray-600 max-w-2xl mx-auto text-lg">
-            A collection of academic and personal projects that showcase my
-            programming knowledge, problem-solving abilities, and software
-            development journey.
+          <p className="text-slate-600 dark:text-slate-400 max-w-2xl mx-auto text-base md:text-lg">
+            A collection of academic, software development, machine learning,
+            and web development projects that demonstrate my technical skills
+            and problem-solving abilities.
           </p>
         </motion.div>
 
-        <div className="grid md:grid-cols-2 gap-6">
+        <div className="grid gap-5 md:grid-cols-2 xl:grid-cols-3">
           {projects.map((project, idx) => (
             <motion.div
               key={project.title}
@@ -98,10 +161,9 @@ const Projects = () => {
               whileInView={{ opacity: 1, y: 0 }}
               viewport={{ once: true }}
               transition={{ delay: idx * 0.1 }}
-              className="group rounded-2xl bg-white border border-gray-200 shadow-sm hover:shadow-lg hover:border-cyan-400 transition-all duration-300 overflow-hidden flex flex-col"
+              className="group overflow-hidden rounded-lg border border-slate-200 bg-white shadow-sm transition-all duration-300 hover:-translate-y-1 hover:border-cyan-400 hover:shadow-lg dark:border-white/10 dark:bg-white/10 dark:shadow-black/20"
             >
-              {/* Project Image */}
-              <div className="h-52 overflow-hidden relative">
+              <div className="relative h-36 overflow-hidden">
                 <img
                   src={project.image}
                   alt={project.title}
@@ -109,60 +171,67 @@ const Projects = () => {
                   referrerPolicy="no-referrer"
                 />
 
-                <div className="absolute top-4 left-4">
-                  <div className="w-10 h-10 rounded-xl bg-white/90 backdrop-blur-sm flex items-center justify-center text-cyan-500 border border-gray-200 shadow-sm">
+                <div className="absolute inset-x-3 top-3 flex items-center justify-between gap-3">
+                  <div className="flex h-9 w-9 items-center justify-center rounded-lg border border-white/70 bg-white/90 text-cyan-600 shadow-sm backdrop-blur dark:border-white/10 dark:bg-slate-950/85 dark:text-cyan-300">
                     {project.icon}
                   </div>
+
+                  <span className="rounded-full border border-white/60 bg-white/90 px-3 py-1 text-[10px] font-bold uppercase tracking-wider text-slate-700 shadow-sm backdrop-blur dark:border-white/10 dark:bg-slate-950/85 dark:text-slate-200">
+                    {project.status}
+                  </span>
                 </div>
               </div>
 
-              {/* Content */}
-              <div className="p-6 flex flex-col flex-grow bg-white border-t border-gray-200">
-                <span className="text-[10px] font-bold uppercase tracking-[0.2em] text-cyan-500 mb-3 block">
+              <div className="flex min-h-[260px] flex-col border-t border-slate-200 bg-white p-5 dark:border-white/10 dark:bg-transparent">
+                <span className="mb-2 block text-[10px] font-bold uppercase tracking-[0.2em] text-cyan-600 dark:text-cyan-300">
                   {project.category}
                 </span>
 
-                <h3 className="text-xl font-bold mb-3 text-gray-900 group-hover:text-cyan-500 transition-colors">
+                <h3 className="mb-2 text-lg font-bold leading-snug text-slate-950 transition-colors group-hover:text-cyan-600 dark:text-white dark:group-hover:text-cyan-300">
                   {project.title}
                 </h3>
 
-                <p className="text-gray-600 mb-5 text-sm leading-relaxed">
+                <p className="mb-4 line-clamp-3 text-sm leading-relaxed text-slate-600 dark:text-slate-400">
                   {project.description}
                 </p>
 
-                <div className="flex flex-wrap gap-2 mb-5 mt-auto">
+                <div className="mb-4 mt-auto flex flex-wrap gap-2">
                   {project.tech.map((t) => (
                     <span
                       key={t}
-                      className="text-[10px] font-bold uppercase tracking-wider px-3 py-1 bg-gray-100 border border-gray-200 rounded-lg text-gray-600"
+                      className="rounded-md border border-slate-200 bg-slate-50 px-2.5 py-1 text-[10px] font-bold uppercase tracking-wider text-slate-600 dark:border-white/10 dark:bg-white/5 dark:text-slate-300"
                     >
                       {t}
                     </span>
                   ))}
                 </div>
 
-                <div className="flex items-center gap-6 pt-5 border-t border-gray-200">
-                  {project.github && (
+                <div className="flex items-center justify-between gap-3 border-t border-slate-200 pt-4 dark:border-white/10">
+                  {project.github ? (
                     <a
                       href={project.github}
                       target="_blank"
                       rel="noopener noreferrer"
-                      className="text-xs font-bold flex items-center gap-2 text-gray-600 hover:text-cyan-500 transition-colors"
+                      className="inline-flex items-center gap-2 rounded-lg border border-slate-200 px-3 py-2 text-xs font-bold text-slate-600 transition-colors hover:border-cyan-400 hover:text-cyan-600 dark:border-white/10 dark:text-slate-300 dark:hover:text-cyan-300"
                     >
                       <Github size={14} />
                       Code
                     </a>
+                  ) : (
+                    <span className="text-xs font-semibold text-slate-400 dark:text-slate-500">
+                      Details on request
+                    </span>
                   )}
 
-                  {project.live && project.live !== '#' && (
+                  {project.live && (
                     <a
                       href={project.live}
                       target="_blank"
                       rel="noopener noreferrer"
-                      className="text-xs font-bold flex items-center gap-2 text-gray-600 hover:text-cyan-500 transition-colors"
+                      className="inline-flex items-center gap-2 rounded-lg bg-cyan-600 px-3 py-2 text-xs font-bold text-white transition-colors hover:bg-cyan-500"
                     >
                       <ExternalLink size={14} />
-                      Preview
+                      Demo
                     </a>
                   )}
                 </div>

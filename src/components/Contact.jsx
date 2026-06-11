@@ -1,6 +1,12 @@
 import React, { useState } from 'react';
 import { motion } from 'framer-motion';
-import { Mail, Github, Send, MessageSquare } from 'lucide-react';
+import PortfolioBackground from './PortfolioBackground';
+import {
+  Mail,
+  Github,
+  Send,
+  MessageSquare,
+} from 'lucide-react';
 
 const Contact = () => {
   const [formData, setFormData] = useState({
@@ -16,11 +22,12 @@ const Contact = () => {
 
     const { name, email, message } = formData;
 
-    const whatsappMessage =
-      `*New Portfolio Message*%0A%0A` +
-      `*Name:* ${name}%0A` +
-      `*Email:* ${email}%0A` +
-      `*Message:* ${message}`;
+    const whatsappMessage = encodeURIComponent(
+      `*New Portfolio Message*\n\n` +
+        `*Name:* ${name}\n` +
+        `*Email:* ${email}\n` +
+        `*Message:* ${message}`,
+    );
 
     const whatsappUrl = `https://wa.me/${whatsappNumber}?text=${whatsappMessage}`;
 
@@ -37,10 +44,9 @@ const Contact = () => {
   return (
     <section
       id="contact"
-      className="py-24 bg-white relative overflow-hidden"
+      className="page-shell py-24 bg-slate-50 relative overflow-hidden dark:bg-slate-950"
     >
-      {/* Background Glow */}
-      <div className="absolute top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2 w-[600px] h-[600px] bg-cyan-400/10 rounded-full blur-[120px] pointer-events-none" />
+      <PortfolioBackground variant="contact" />
 
       <div className="max-w-7xl mx-auto px-6 relative z-10">
         <div className="grid md:grid-cols-2 gap-16">
@@ -52,14 +58,14 @@ const Contact = () => {
             viewport={{ once: true }}
             transition={{ duration: 0.6 }}
           >
-            <h2 className="text-4xl md:text-5xl font-bold mb-6 text-gray-900">
-              Get In <span className="text-cyan-500">Touch.</span>
+            <h2 className="text-4xl md:text-5xl font-bold mb-6 text-slate-950 dark:text-white">
+              Let's Work <span className="text-cyan-500">Together.</span>
             </h2>
 
-            <p className="text-gray-600 text-lg mb-10 max-w-md">
-              Feel free to contact me for project collaborations,
-              internship opportunities, freelance work, or software
-              development related discussions.
+            <p className="text-slate-600 dark:text-slate-400 text-lg mb-10 max-w-md">
+              I'm always open to discussing new opportunities,
+              internships, project collaborations, and innovative ideas.
+              Feel free to reach out and let's build something amazing together.
             </p>
 
             <div className="space-y-6">
@@ -71,16 +77,16 @@ const Contact = () => {
                 rel="noopener noreferrer"
                 className="flex items-center gap-4 group"
               >
-                <div className="w-12 h-12 rounded-2xl bg-white border border-gray-200 shadow-sm flex items-center justify-center text-green-500 group-hover:bg-green-600 group-hover:text-white transition-all duration-300">
+                <div className="w-12 h-12 rounded-lg bg-white border border-slate-200 shadow-sm flex items-center justify-center text-green-500 group-hover:bg-green-600 group-hover:text-white transition-all duration-300 dark:bg-white/10 dark:border-white/10">
                   <MessageSquare size={20} />
                 </div>
 
                 <div>
-                  <p className="text-[10px] font-bold text-gray-500 uppercase tracking-widest">
+                  <p className="text-[10px] font-bold text-slate-500 dark:text-slate-400 uppercase tracking-widest">
                     WhatsApp
                   </p>
 
-                  <p className="text-gray-900 font-medium">
+                  <p className="text-slate-950 dark:text-white font-medium">
                     +880 1816-648095
                   </p>
                 </div>
@@ -91,16 +97,16 @@ const Contact = () => {
                 href="mailto:mdruhulaminridoy18@gmail.com"
                 className="flex items-center gap-4 group"
               >
-                <div className="w-12 h-12 rounded-2xl bg-white border border-gray-200 shadow-sm flex items-center justify-center text-cyan-500 group-hover:bg-cyan-600 group-hover:text-white transition-all duration-300">
+                <div className="w-12 h-12 rounded-lg bg-white border border-slate-200 shadow-sm flex items-center justify-center text-cyan-500 group-hover:bg-cyan-600 group-hover:text-white transition-all duration-300 dark:bg-white/10 dark:border-white/10">
                   <Mail size={20} />
                 </div>
 
                 <div>
-                  <p className="text-[10px] font-bold text-gray-500 uppercase tracking-widest">
+                  <p className="text-[10px] font-bold text-slate-500 dark:text-slate-400 uppercase tracking-widest">
                     Email
                   </p>
 
-                  <p className="text-gray-900 font-medium">
+                  <p className="text-slate-950 dark:text-white font-medium break-all">
                     mdruhulaminridoy18@gmail.com
                   </p>
                 </div>
@@ -113,16 +119,16 @@ const Contact = () => {
                 rel="noopener noreferrer"
                 className="flex items-center gap-4 group"
               >
-                <div className="w-12 h-12 rounded-2xl bg-white border border-gray-200 shadow-sm flex items-center justify-center text-orange-500 group-hover:bg-orange-600 group-hover:text-white transition-all duration-300">
+                <div className="w-12 h-12 rounded-lg bg-white border border-slate-200 shadow-sm flex items-center justify-center text-slate-700 group-hover:bg-black group-hover:text-white transition-all duration-300 dark:bg-white/10 dark:border-white/10 dark:text-slate-200">
                   <Github size={20} />
                 </div>
 
                 <div>
-                  <p className="text-[10px] font-bold text-gray-500 uppercase tracking-widest">
+                  <p className="text-[10px] font-bold text-slate-500 dark:text-slate-400 uppercase tracking-widest">
                     GitHub
                   </p>
 
-                  <p className="text-gray-900 font-medium">
+                  <p className="text-slate-950 dark:text-white font-medium">
                     github.com/ruhulamin18
                   </p>
                 </div>
@@ -137,15 +143,16 @@ const Contact = () => {
             whileInView={{ opacity: 1, x: 0 }}
             viewport={{ once: true }}
             transition={{ duration: 0.6 }}
-            className="p-8 rounded-3xl bg-white border border-gray-200 shadow-lg"
+            className="p-8 rounded-lg bg-white border border-slate-200 shadow-lg hover:shadow-2xl transition-all duration-300 dark:bg-white/10 dark:border-white/10 dark:shadow-black/30"
           >
             <form
               className="space-y-6"
               onSubmit={handleSubmit}
             >
               <div className="grid sm:grid-cols-2 gap-6">
+
                 <div>
-                  <label className="text-[10px] font-bold uppercase tracking-widest text-gray-500 ml-1">
+                  <label className="text-[10px] font-bold uppercase tracking-widest text-slate-500 dark:text-slate-400 ml-1">
                     Name
                   </label>
 
@@ -156,12 +163,12 @@ const Contact = () => {
                     value={formData.name}
                     onChange={handleChange}
                     placeholder="Your Name"
-                    className="w-full mt-2 px-4 py-3 rounded-xl bg-white border border-gray-300 text-gray-900 focus:outline-none focus:border-cyan-500"
+                    className="w-full mt-2 px-4 py-3 rounded-lg bg-white border border-slate-300 text-slate-950 focus:outline-none focus:border-cyan-500 dark:bg-slate-950/70 dark:border-white/10 dark:text-white"
                   />
                 </div>
 
                 <div>
-                  <label className="text-[10px] font-bold uppercase tracking-widest text-gray-500 ml-1">
+                  <label className="text-[10px] font-bold uppercase tracking-widest text-slate-500 dark:text-slate-400 ml-1">
                     Email
                   </label>
 
@@ -172,13 +179,14 @@ const Contact = () => {
                     value={formData.email}
                     onChange={handleChange}
                     placeholder="your@email.com"
-                    className="w-full mt-2 px-4 py-3 rounded-xl bg-white border border-gray-300 text-gray-900 focus:outline-none focus:border-cyan-500"
+                    className="w-full mt-2 px-4 py-3 rounded-lg bg-white border border-slate-300 text-slate-950 focus:outline-none focus:border-cyan-500 dark:bg-slate-950/70 dark:border-white/10 dark:text-white"
                   />
                 </div>
+
               </div>
 
               <div>
-                <label className="text-[10px] font-bold uppercase tracking-widest text-gray-500 ml-1">
+                <label className="text-[10px] font-bold uppercase tracking-widest text-slate-500 dark:text-slate-400 ml-1">
                   Message
                 </label>
 
@@ -189,21 +197,22 @@ const Contact = () => {
                   onChange={handleChange}
                   rows={5}
                   placeholder="Write your message..."
-                  className="w-full mt-2 px-4 py-3 rounded-xl bg-white border border-gray-300 text-gray-900 focus:outline-none focus:border-cyan-500 resize-none"
+                  className="w-full mt-2 px-4 py-3 rounded-lg bg-white border border-slate-300 text-slate-950 focus:outline-none focus:border-cyan-500 resize-none dark:bg-slate-950/70 dark:border-white/10 dark:text-white"
                 />
               </div>
 
               <button
                 type="submit"
-                className="w-full py-4 bg-cyan-600 text-white rounded-xl font-medium hover:bg-cyan-700 transition-all flex items-center justify-center gap-2"
+                className="w-full py-4 bg-cyan-600 text-white rounded-lg font-medium hover:bg-cyan-500 hover:-translate-y-1 transition-all flex items-center justify-center gap-2"
               >
                 Send via WhatsApp
                 <Send size={18} />
               </button>
 
-              <p className="text-center text-[10px] text-gray-500 uppercase tracking-widest">
+              <p className="text-center text-[10px] text-slate-500 dark:text-slate-400 uppercase tracking-widest">
                 Your message will open in WhatsApp
               </p>
+
             </form>
           </motion.div>
 

@@ -1,5 +1,7 @@
 @import "tailwindcss";
 
+@custom-variant dark (&:where(.dark, .dark *));
+
 @theme {
   --font-sans: "Inter", ui-sans-serif, system-ui, sans-serif;
   --font-display: "Playfair Display", ui-serif, Georgia, Cambria,
@@ -12,11 +14,18 @@
   }
 
   body {
-    @apply bg-white text-gray-900 antialiased selection:bg-blue-500/30 selection:text-blue-200;
+    @apply bg-slate-50 text-slate-950 antialiased selection:bg-cyan-500/30 selection:text-cyan-950 transition-colors duration-300 dark:bg-slate-950 dark:text-white dark:selection:text-white;
   }
 }
 
 @layer utilities {
+  .page-shell {
+    background-image:
+      linear-gradient(to right, rgba(148, 163, 184, 0.12) 1px, transparent 1px),
+      linear-gradient(to bottom, rgba(148, 163, 184, 0.12) 1px, transparent 1px);
+    background-size: 44px 44px;
+  }
+
   .neon-glow {
     text-shadow:
       0 0 10px rgba(59, 130, 246, 0.5),
