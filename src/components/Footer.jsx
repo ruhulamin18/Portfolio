@@ -1,5 +1,6 @@
 import React from 'react';
 import { motion } from 'framer-motion';
+import { Link } from 'react-router-dom';
 import {
   ChevronUp,
   Facebook,
@@ -121,13 +122,13 @@ const Footer = () => {
               className="mt-6 flex flex-wrap justify-center gap-x-6 gap-y-3"
             >
               {quickLinks.map((link) => (
-                <a
+                <Link
                   key={link.href}
-                  href={link.href}
+                  to={link.href}
                   className="text-xs font-black uppercase tracking-[0.22em] text-white transition-colors hover:text-cyan-300"
                 >
                   {link.label}
-                </a>
+                </Link>
               ))}
             </nav>
 
