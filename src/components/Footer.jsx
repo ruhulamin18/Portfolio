@@ -5,6 +5,7 @@ import {
   ChevronUp,
   Facebook,
   Github,
+  Linkedin,
   Mail,
   MessageSquare,
   MapPin,
@@ -34,6 +35,12 @@ const socialLinks = [
     href: 'https://www.facebook.com/ruhulamin.ridoy018',
     icon: Facebook,
     className: 'hover:border-blue-600 hover:bg-blue-600 hover:text-white',
+  },
+  {
+    label: 'LinkedIn',
+    href: 'https://www.linkedin.com/in/md-ruhul-amin-r018',
+    icon: Linkedin,
+    className: 'hover:border-sky-600 hover:bg-sky-600 hover:text-white',
   },
   {
     label: 'Email',

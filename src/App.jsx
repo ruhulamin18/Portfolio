@@ -1,5 +1,5 @@
 import React, { useEffect, useState } from 'react';
-import { BrowserRouter, Routes, Route } from 'react-router-dom';
+import { BrowserRouter, Routes, Route, useLocation } from 'react-router-dom';
 
 import Navbar from './components/Navbar';
 import Footer from './components/Footer';
@@ -12,6 +12,16 @@ import CertificatesPage from './pages/Certificates';
 import ProjectsPage from './pages/Projects';
 import ContactPage from './pages/Contact';
 import CV from './pages/CV';
+
+const ScrollToTop = () => {
+  const { pathname } = useLocation();
+
+  useEffect(() => {
+    window.scrollTo(0, 0);
+  }, [pathname]);
+
+  return null;
+};
 
 export default function App() {
   const [isDark, setIsDark] = useState(() => {
@@ -30,6 +40,7 @@ export default function App() {
 
   return (
     <BrowserRouter>
+      <ScrollToTop />
       <Navbar isDark={isDark} onToggleTheme={() => setIsDark((value) => !value)} />
 
       <Routes>

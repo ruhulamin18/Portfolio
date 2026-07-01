@@ -7,12 +7,39 @@ import {
   Layers,
   Github,
   ExternalLink,
+  Search,
 } from 'lucide-react';
 
 const githubProfile = 'https://github.com/ruhulamin18';
 
 const Projects = () => {
   const projects = [
+    {
+      title: 'GitHub Workspace',
+      category: 'Full Stack / React Web Application',
+      status: 'Mini GitHub client',
+      description:
+        'A React-based mini GitHub client for exploring developers, repositories, collections, favorites, activity, notifications, and personalized settings through a clean interactive interface.',
+      tech: [
+        'React',
+        'Vite',
+        'Tailwind CSS',
+        'React Router',
+        'Context API',
+        'GitHub REST API',
+      ],
+      features: [
+        'Fake auth with login and register flow',
+        'User, repository, and advanced filtered search',
+        'Favorites, collections, activity feed, and settings',
+      ],
+      icon: <Search size={22} />,
+      image:
+        'https://images.unsplash.com/photo-1618477388954-7852f32655ec?w=800&q=80',
+      github: 'https://github.com/ruhulamin18/github-workspace',
+      live: null,
+    },
+
     {
       title: 'Personal Portfolio Website',
       category: 'Frontend Development',
@@ -184,7 +211,7 @@ const Projects = () => {
                 </div>
               </div>
 
-              <div className="flex min-h-[260px] flex-col border-t border-slate-200 bg-white p-5 dark:border-white/10 dark:bg-transparent">
+              <div className="flex min-h-[320px] flex-col border-t border-slate-200 bg-white p-5 dark:border-white/10 dark:bg-transparent">
                 <span className="mb-2 block text-[10px] font-bold uppercase tracking-[0.2em] text-cyan-600 dark:text-cyan-300">
                   {project.category}
                 </span>
@@ -196,6 +223,17 @@ const Projects = () => {
                 <p className="mb-4 line-clamp-3 text-sm leading-relaxed text-slate-600 dark:text-slate-400">
                   {project.description}
                 </p>
+
+                {project.features && (
+                  <ul className="mb-4 space-y-2 text-xs font-semibold leading-relaxed text-slate-600 dark:text-slate-300">
+                    {project.features.map((feature) => (
+                      <li key={feature} className="flex gap-2">
+                        <span className="mt-2 h-1.5 w-1.5 shrink-0 rounded-full bg-cyan-500 dark:bg-cyan-300" />
+                        <span>{feature}</span>
+                      </li>
+                    ))}
+                  </ul>
+                )}
 
                 <div className="mb-4 mt-auto flex flex-wrap gap-2">
                   {project.tech.map((t) => (

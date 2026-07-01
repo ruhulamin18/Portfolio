@@ -4,6 +4,7 @@ import PortfolioBackground from './PortfolioBackground';
 import {
   Mail,
   Github,
+  Linkedin,
   Send,
   MessageSquare,
 } from 'lucide-react';
@@ -108,6 +109,28 @@ const Contact = () => {
 
                   <p className="text-slate-950 dark:text-white font-medium break-all">
                     mdruhulaminridoy18@gmail.com
+                  </p>
+                </div>
+              </a>
+
+              {/* LinkedIn */}
+              <a
+                href="https://www.linkedin.com/in/md-ruhul-amin-r018"
+                target="_blank"
+                rel="noopener noreferrer"
+                className="flex items-center gap-4 group"
+              >
+                <div className="w-12 h-12 rounded-lg bg-white border border-slate-200 shadow-sm flex items-center justify-center text-sky-600 group-hover:bg-sky-600 group-hover:text-white transition-all duration-300 dark:bg-white/10 dark:border-white/10">
+                  <Linkedin size={20} />
+                </div>
+
+                <div>
+                  <p className="text-[10px] font-bold text-slate-500 dark:text-slate-400 uppercase tracking-widest">
+                    LinkedIn
+                  </p>
+
+                  <p className="text-slate-950 dark:text-white font-medium break-all">
+                    linkedin.com/in/md-ruhul-amin-r018
                   </p>
                 </div>
               </a>
