@@ -1,12 +1,12 @@
 import React, { useState, useEffect } from 'react';
 import { motion, AnimatePresence } from 'framer-motion';
 import { Menu, Moon, Sun, X } from 'lucide-react';
-import { Link, NavLink } from 'react-router-dom';
 import logo from '../assets/logo.png';
 
 const Navbar = ({ isDark, onToggleTheme }) => {
   const [isScrolled, setIsScrolled] = useState(false);
   const [isMobileMenuOpen, setIsMobileMenuOpen] = useState(false);
+  const [activeSection, setActiveSection] = useState('home');
 
   useEffect(() => {
     const handleScroll = () => setIsScrolled(window.scrollY > 20);
@@ -16,15 +16,52 @@ const Navbar = ({ isDark, onToggleTheme }) => {
     return () => window.removeEventListener('scroll', handleScroll);
   }, []);
 
+  useEffect(() => {
+    const sectionIds = [
+      'home',
+      'education',
+      'skills',
+      'experience',
+      'certificates',
+      'projects',
+      'contact',
+    ];
+
+    const observer = new IntersectionObserver(
+      (entries) => {
+        const visibleEntry = entries
+          .filter((entry) => entry.isIntersecting)
+          .sort((a, b) => b.intersectionRatio - a.intersectionRatio)[0];
+
+        if (visibleEntry) {
+          setActiveSection(visibleEntry.target.id);
+        }
+      },
+      {
+        rootMargin: '-45% 0px -45% 0px',
+        threshold: [0.15, 0.3, 0.5, 0.7],
+      }
+    );
+
+    sectionIds.forEach((id) => {
+      const element = document.getElementById(id);
+      if (element) observer.observe(element);
+    });
+
+    return () => observer.disconnect();
+  }, []);
+
   const navLinks = [
-    { name: 'Home', path: '/' },
-    { name: 'Education', path: '/education' },
-    { name: 'Skills', path: '/skills' },
-    { name: 'Experience', path: '/experience' },
-    { name: 'Certificates', path: '/certificates' },
-    { name: 'Projects', path: '/projects' },
-    { name: 'Contact', path: '/contact' },
+    { name: 'Home', href: '#home', sectionId: 'home' },
+    { name: 'Education', href: '#education', sectionId: 'education' },
+    { name: 'Skills', href: '#skills', sectionId: 'skills' },
+    { name: 'Experience', href: '#experience', sectionId: 'experience' },
+    { name: 'Certificates', href: '#certificates', sectionId: 'certificates' },
+    { name: 'Projects', href: '#projects', sectionId: 'projects' },
+    { name: 'Contact', href: '#contact', sectionId: 'contact' },
   ];
+
+  const cvLink = '/Ruhul_Amin_CV.pdf';
 
   return (
     <nav
@@ -37,7 +74,7 @@ const Navbar = ({ isDark, onToggleTheme }) => {
       <div className="max-w-7xl mx-auto px-6 flex items-center justify-between">
 
         {/* Logo */}
-        <Link to="/" aria-label="Md. Ruhul Amin home">
+        <a href="#home" aria-label="Md. Ruhul Amin home">
           <motion.div
             initial={{ opacity: 0, x: -20 }}
             animate={{ opacity: 1, x: 0 }}
@@ -51,7 +88,7 @@ const Navbar = ({ isDark, onToggleTheme }) => {
               />
             </div>
           </motion.div>
-        </Link>
+        </a>
 
         {/* Desktop Menu */}
         <div className="hidden md:flex items-center gap-5 lg:gap-7">
@@ -62,20 +99,27 @@ const Navbar = ({ isDark, onToggleTheme }) => {
               animate={{ opacity: 1, y: 0 }}
               transition={{ delay: i * 0.1 }}
             >
-              <NavLink
-                to={link.path}
-                className={({ isActive }) =>
-                  `text-sm font-medium transition-colors ${
-                    isActive
-                      ? 'text-cyan-600 dark:text-cyan-300'
-                      : 'text-slate-600 hover:text-cyan-600 dark:text-slate-300 dark:hover:text-cyan-300'
-                  }`
-                }
+              <a
+                href={link.href}
+                className={`text-sm font-medium transition-colors ${
+                  activeSection === link.sectionId
+                    ? 'text-cyan-600 dark:text-cyan-300'
+                    : 'text-slate-600 hover:text-cyan-600 dark:text-slate-300 dark:hover:text-cyan-300'
+                }`}
               >
                 {link.name}
-              </NavLink>
+              </a>
             </motion.div>
           ))}
+
+          <a
+            href={cvLink}
+            target="_blank"
+            rel="noopener noreferrer"
+            className="rounded-full border border-cyan-500/40 bg-cyan-500/10 px-4 py-2 text-sm font-semibold text-cyan-700 transition-all duration-300 hover:-translate-y-0.5 hover:bg-cyan-500 hover:text-white dark:text-cyan-200"
+          >
+            View My CV
+          </a>
 
           <button
             type="button"
@@ -120,21 +164,29 @@ const Navbar = ({ isDark, onToggleTheme }) => {
           >
             <div className="flex flex-col p-6 gap-4">
               {navLinks.map((link) => (
-                <NavLink
+                <a
                   key={link.name}
-                  to={link.path}
+                  href={link.href}
                   onClick={() => setIsMobileMenuOpen(false)}
-                  className={({ isActive }) =>
-                    `text-lg font-medium transition-colors ${
-                      isActive
-                        ? 'text-cyan-600 dark:text-cyan-300'
-                        : 'text-slate-700 hover:text-cyan-600 dark:text-slate-200 dark:hover:text-cyan-300'
-                    }`
-                  }
+                  className={`text-lg font-medium transition-colors ${
+                    activeSection === link.sectionId
+                      ? 'text-cyan-600 dark:text-cyan-300'
+                      : 'text-slate-700 hover:text-cyan-600 dark:text-slate-200 dark:hover:text-cyan-300'
+                  }`}
                 >
                   {link.name}
-                </NavLink>
+                </a>
               ))}
+
+              <a
+                href={cvLink}
+                target="_blank"
+                rel="noopener noreferrer"
+                onClick={() => setIsMobileMenuOpen(false)}
+                className="mt-2 inline-flex items-center justify-center rounded-full border border-cyan-500/40 bg-cyan-500/10 px-4 py-2 text-sm font-semibold text-cyan-700 transition-colors hover:bg-cyan-500 hover:text-white dark:text-cyan-200"
+              >
+                View My CV
+              </a>
             </div>
           </motion.div>
         )}

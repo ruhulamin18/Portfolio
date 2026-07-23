@@ -55,17 +55,9 @@ const Hero = () => {
               Learning Enthusiast | Building Innovative Digital Solutions
             </p>
 
-            <div className="mx-auto mb-10 max-w-2xl text-base leading-relaxed text-slate-600 dark:text-slate-400 sm:text-lg lg:mx-0">
-              <p>
-                Computer Science and Engineering student at Daffodil
-                International University with interests in Frontend Development,
-                Machine Learning, and Software Engineering. Skilled in React.js,
-                JavaScript, Python, Java, and MySQL. Passionate about building
-                modern web applications, solving real-world problems, and
-                continuously learning emerging technologies. Currently serving
-                as a Public Relations Ambassador at Skills Job while pursuing
-                professional growth through projects, certifications, and
-                research.
+            <div className="mx-auto mb-10 max-w-[68ch] text-base leading-[1.9] text-slate-600 dark:text-slate-400 sm:text-lg lg:mx-0">
+              <p className="text-justify md:text-justify sm:text-left">
+                I'm a Computer Science and Engineering student with a passion for building modern, responsive, and user-centric web applications. Skilled in React.js, Tailwind CSS, JavaScript, Python, and MySQL, I enjoy solving real-world problems through clean and efficient code. I'm currently seeking an internship or entry-level Software Engineer or Frontend Developer role where I can contribute to impactful projects while continuously expanding my technical expertise.
               </p>
             </div>
 
@@ -95,7 +87,7 @@ const Hero = () => {
               </a>
 
               <a
-                href="mailto:mdruhulaminridoy18@gmail.com"
+                href="#contact"
                 className="px-8 py-4 bg-white border border-slate-200 text-slate-900 rounded-xl font-medium shadow-sm transition-all hover:-translate-y-1 hover:border-cyan-300 hover:bg-cyan-50 dark:border-white/10 dark:bg-white/10 dark:text-white dark:hover:bg-white/15"
               >
                 Contact Me

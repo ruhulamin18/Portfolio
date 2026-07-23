@@ -93,10 +93,28 @@ const certificates = [
       },
     ],
   },
+  {
+    title: 'IEEE ICADHI 2026 – Idea Competition Participant',
+    organization: 'IEEE ICADHI 2026',
+    year: '2026',
+    description:
+      'Presented "NeuroGuard AI", an AI-powered predictive healthcare solution for early detection of life-threatening medical emergencies at the IEEE ICADHI 2026 Idea Competition.',
+    icon: Trophy,
+    link: 'https://your-certificate-url-here',
+  },
+  {
+    title: 'IEEE WIE Day 2026 – National Idea Presentation Competition',
+    organization: 'IEEE WIE DAY 2026',
+    year: '2026',
+    description:
+      'Presented "EcoMesh 2.0", an innovative coastal protection solution at the IEEE WIE Day 2026 National Idea Presentation Competition.',
+    icon: Trophy,
+    link: 'https://your-certificate-url-here',
+  },
 ];
 
 const summaryItems = [
-  '7+ Certifications',
+  '9+ Certifications',
   'Leadership & Communication',
   'Programming & Machine Learning',
   'Continuous Learner',

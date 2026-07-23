@@ -1,27 +1,15 @@
 import React, { useEffect, useState } from 'react';
-import { BrowserRouter, Routes, Route, useLocation } from 'react-router-dom';
 
 import Navbar from './components/Navbar';
 import Footer from './components/Footer';
 
-import Home from './pages/Home';
-import EducationPage from './pages/Education';
-import SkillsPage from './pages/Skills';
-import ExperiencePage from './pages/Experience';
-import CertificatesPage from './pages/Certificates';
-import ProjectsPage from './pages/Projects';
-import ContactPage from './pages/Contact';
-import CV from './pages/CV';
-
-const ScrollToTop = () => {
-  const { pathname } = useLocation();
-
-  useEffect(() => {
-    window.scrollTo(0, 0);
-  }, [pathname]);
-
-  return null;
-};
+import Hero from './components/Hero';
+import Education from './components/Education';
+import Skills from './components/Skills';
+import Experience from './components/Experience';
+import Certificates from './components/Certificates';
+import Projects from './components/Projects';
+import Contact from './components/Contact';
 
 export default function App() {
   const [isDark, setIsDark] = useState(() => {
@@ -39,22 +27,20 @@ export default function App() {
   }, [isDark]);
 
   return (
-    <BrowserRouter>
-      <ScrollToTop />
+    <>
       <Navbar isDark={isDark} onToggleTheme={() => setIsDark((value) => !value)} />
 
-      <Routes>
-        <Route path="/" element={<Home />} />
-        <Route path="/education" element={<EducationPage />} />
-        <Route path="/skills" element={<SkillsPage />} />
-        <Route path="/experience" element={<ExperiencePage />} />
-        <Route path="/certificates" element={<CertificatesPage />} />
-        <Route path="/projects" element={<ProjectsPage />} />
-        <Route path="/contact" element={<ContactPage />} />
-        <Route path="/cv" element={<CV />} />
-      </Routes>
+      <main>
+        <Hero />
+        <Education />
+        <Skills />
+        <Experience />
+        <Certificates />
+        <Projects />
+        <Contact />
+      </main>
 
       <Footer />
-    </BrowserRouter>
+    </>
   );
 }

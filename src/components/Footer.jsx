@@ -1,6 +1,5 @@
 import React from 'react';
 import { motion } from 'framer-motion';
-import { Link } from 'react-router-dom';
 import {
   ChevronUp,
   Facebook,
@@ -13,13 +12,13 @@ import {
 } from 'lucide-react';
 
 const quickLinks = [
-  { label: 'Home', href: '/' },
-  { label: 'Education', href: '/education' },
-  { label: 'Skills', href: '/skills' },
-  { label: 'Experience', href: '/experience' },
-  { label: 'Certificates', href: '/certificates' },
-  { label: 'Projects', href: '/projects' },
-  { label: 'Contact', href: '/contact' },
+  { label: 'Home', href: '#home' },
+  { label: 'Education', href: '#education' },
+  { label: 'Skills', href: '#skills' },
+  { label: 'Experience', href: '#experience' },
+  { label: 'Certificates', href: '#certificates' },
+  { label: 'Projects', href: '#projects' },
+  { label: 'Contact', href: '#contact' },
 ];
 
 const socialLinks = [
@@ -129,13 +128,13 @@ const Footer = () => {
               className="mt-6 flex flex-wrap justify-center gap-x-6 gap-y-3"
             >
               {quickLinks.map((link) => (
-                <Link
+                <a
                   key={link.href}
-                  to={link.href}
+                  href={link.href}
                   className="text-xs font-black uppercase tracking-[0.22em] text-white transition-colors hover:text-cyan-300"
                 >
                   {link.label}
-                </Link>
+                </a>
               ))}
             </nav>
 

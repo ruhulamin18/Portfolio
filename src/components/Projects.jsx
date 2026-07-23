@@ -24,7 +24,7 @@ const Projects = () => {
         'React',
         'Vite',
         'Tailwind CSS',
-        'React Router',
+        'Framer Motion',
         'Context API',
         'GitHub REST API',
       ],
@@ -46,7 +46,7 @@ const Projects = () => {
       status: 'Live-ready',
       description:
         'A modern and responsive portfolio website built using React.js and Tailwind CSS. It showcases my skills, projects, education, and contact information with smooth animations and clean user experience.',
-      tech: ['React.js', 'Tailwind CSS', 'Framer Motion', 'React Router'],
+      tech: ['React.js', 'Vite', 'Tailwind CSS', 'Framer Motion', 'EmailJS'],
       icon: <Layers size={22} />,
       image:
         'https://images.unsplash.com/photo-1461749280684-dccba630e2f6?w=800&q=80',
@@ -56,11 +56,11 @@ const Projects = () => {
 
     {
       title: 'Student Management System',
-      category: 'Desktop Application',
+      category: 'Web Application',
       status: 'Academic',
       description:
-        'A complete student management solution developed to manage student records, attendance, academic information, and profile management efficiently.',
-      tech: ['Python', 'MySQL', 'OOP'],
+        'Developed a web-based student management system with CRUD functionality. Integrated MySQL for secure and efficient data management.',
+      tech: ['Python', 'Flask', 'MySQL'],
       icon: <Terminal size={22} />,
       image:
         'https://images.unsplash.com/photo-1522202176988-66273c2fd55f?w=800&q=80',
@@ -115,8 +115,8 @@ const Projects = () => {
       category: 'Software Development',
       status: 'Academic',
       description:
-        'A parking management application developed to handle vehicle entries, exits, slot allocation, and parking history management effectively.',
-      tech: ['Java', 'MySQL', 'OOP'],
+        'Developed a parking management system to manage vehicle entry, exit, and parking records. Integrated SQLite for efficient data storage and parking record management.',
+      tech: ['Python', 'SQLite'],
       icon: <Terminal size={22} />,
       image:
         'https://images.unsplash.com/photo-1506521781263-d8422e82f27a?w=800&q=80',
