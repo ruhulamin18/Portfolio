@@ -100,7 +100,7 @@ const certificates = [
     description:
       'Presented "NeuroGuard AI", an AI-powered predictive healthcare solution for early detection of life-threatening medical emergencies at the IEEE ICADHI 2026 Idea Competition.',
     icon: Trophy,
-    link: 'https://your-certificate-url-here',
+    link: '/certificates/ICADHI.pdf',
   },
   {
     title: 'IEEE WIE Day 2026 – National Idea Presentation Competition',
@@ -109,7 +109,7 @@ const certificates = [
     description:
       'Presented "EcoMesh 2.0", an innovative coastal protection solution at the IEEE WIE Day 2026 National Idea Presentation Competition.',
     icon: Trophy,
-    link: 'https://your-certificate-url-here',
+    link: '/certificates/IEEE%20SEU%20idea%20presentation.pdf',
   },
 ];
 

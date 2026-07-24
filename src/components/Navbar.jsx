@@ -167,7 +167,16 @@ const Navbar = ({ isDark, onToggleTheme }) => {
                 <a
                   key={link.name}
                   href={link.href}
-                  onClick={() => setIsMobileMenuOpen(false)}
+                  onClick={(e) => {
+                    e.preventDefault();
+                    setIsMobileMenuOpen(false);
+                    const el = document.getElementById(link.sectionId);
+                    if (el) {
+                      setTimeout(() => el.scrollIntoView({ behavior: 'smooth' }), 120);
+                    } else {
+                      setTimeout(() => (window.location.hash = link.href), 120);
+                    }
+                  }}
                   className={`text-lg font-medium transition-colors ${
                     activeSection === link.sectionId
                       ? 'text-cyan-600 dark:text-cyan-300'
