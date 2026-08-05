@@ -42,6 +42,23 @@ const certificates = [
     link: '/certificates/python-programming.pdf',
   },
   {
+    title: 'SPA Development with React.js Certificate',
+    organization: 'National Cyber Security Agency',
+    year: '2026',
+    description:
+      'Successfully completed a 7-day training program on SPA Development with React.js, organized by the National Cyber Security Agency, achieving a perfect score of 100.',
+    icon: Code2,
+    link: '/certificates/SPA Development with React.Js.pdf',
+  },
+  {
+    title: 'PKI Training',
+    organization: 'Public Key Infrastructure (PKI)',
+    year: '2026',
+    description:
+      'Completed training on Public Key Infrastructure (PKI), focusing on digital certificates, encryption, authentication, and secure communication.',
+    icon: BadgeCheck,
+  },
+  {
     title: 'Public Relations Ambassador',
     organization: 'Skills Job',
     year: '2026',
@@ -114,7 +131,7 @@ const certificates = [
 ];
 
 const summaryItems = [
-  '9+ Certifications',
+  '11+ Certifications',
   'Leadership & Communication',
   'Programming & Machine Learning',
   'Continuous Learner',
