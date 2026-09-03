@@ -4,34 +4,15 @@ import PortfolioBackground from './PortfolioBackground';
 import {
   Award,
   BadgeCheck,
-  BrainCircuit,
   Code2,
   ExternalLink,
   GraduationCap,
   Medal,
   Sparkles,
   Trophy,
-  Users,
 } from 'lucide-react';
 
 const certificates = [
-  {
-    title: 'National Skill Standard Basic Course Certificate',
-    organization: 'Skills Development Program',
-    year: '2021',
-    description:
-      'Successfully completed a 360-hour skill development training program and gained practical industry-relevant technical skills.',
-    icon: GraduationCap,
-    link: '/certificates/National Skill Standard Basic Course Certificate.pdf',
-  },
-  {
-    title: 'Machine Learning with Python',
-    organization: 'Online Certification',
-    year: '2026',
-    description:
-      'Learned machine learning fundamentals, data preprocessing, predictive modeling, and classification techniques using Python.',
-    icon: BrainCircuit,
-  },
   {
     title: 'Python Programming Certificate',
     organization: 'UniAthena',
@@ -59,21 +40,22 @@ const certificates = [
     icon: BadgeCheck,
   },
   {
-    title: 'Public Relations Ambassador',
-    organization: 'Skills Job',
+    title: 'IEEE ICADHI 2026 – Idea Competition Participant',
+    organization: 'IEEE ICADHI 2026',
     year: '2026',
     description:
-      'Represented Skills Job initiatives and developed leadership, networking, communication, and public relations skills.',
-    icon: Users,
+      'Presented "NeuroGuard AI", an AI-powered predictive healthcare solution for early detection of life-threatening medical emergencies at the IEEE ICADHI 2026 Idea Competition.',
+    icon: Trophy,
+    link: '/certificates/ICADHI.pdf',
   },
   {
-    title: 'Take-off Contest Participation Certificate',
-    organization: 'Daffodil International University',
-    year: '2023',
+    title: 'IEEE WIE Day 2026 – National Idea Presentation Competition',
+    organization: 'IEEE WIE DAY 2026',
+    year: '2026',
     description:
-      'Participated in innovation and competition activities that enhanced creativity, teamwork, and problem-solving abilities.',
+      'Presented "EcoMesh 2.0", an innovative coastal protection solution at the IEEE WIE Day 2026 National Idea Presentation Competition.',
     icon: Trophy,
-    link: '/certificates/Take-off Contest Participation Certificate.pdf',
+    link: '/certificates/IEEE%20SEU%20idea%20presentation.pdf',
   },
   {
     title: 'Leadership Competition Participation Certificate',
@@ -111,22 +93,22 @@ const certificates = [
     ],
   },
   {
-    title: 'IEEE ICADHI 2026 – Idea Competition Participant',
-    organization: 'IEEE ICADHI 2026',
-    year: '2026',
+    title: 'Take-off Contest Participation Certificate',
+    organization: 'Daffodil International University',
+    year: '2023',
     description:
-      'Presented "NeuroGuard AI", an AI-powered predictive healthcare solution for early detection of life-threatening medical emergencies at the IEEE ICADHI 2026 Idea Competition.',
+      'Participated in innovation and competition activities that enhanced creativity, teamwork, and problem-solving abilities.',
     icon: Trophy,
-    link: '/certificates/ICADHI.pdf',
+    link: '/certificates/Take-off Contest Participation Certificate.pdf',
   },
   {
-    title: 'IEEE WIE Day 2026 – National Idea Presentation Competition',
-    organization: 'IEEE WIE DAY 2026',
-    year: '2026',
+    title: 'National Skill Standard Basic Course Certificate',
+    organization: 'Skills Development Program',
+    year: '2021',
     description:
-      'Presented "EcoMesh 2.0", an innovative coastal protection solution at the IEEE WIE Day 2026 National Idea Presentation Competition.',
-    icon: Trophy,
-    link: '/certificates/IEEE%20SEU%20idea%20presentation.pdf',
+      'Successfully completed a 360-hour skill development training program and gained practical industry-relevant technical skills.',
+    icon: GraduationCap,
+    link: '/certificates/National Skill Standard Basic Course Certificate.pdf',
   },
 ];
 
