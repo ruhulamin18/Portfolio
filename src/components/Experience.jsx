@@ -7,22 +7,9 @@ import {
   Code2,
   GraduationCap,
   Sparkles,
-  Users,
 } from 'lucide-react';
 
 const experiences = [
-  {
-    role: 'Public Relations Ambassador',
-    organization: 'Skills Job',
-    period: '2025 - Present',
-    icon: Users,
-    accent: 'text-cyan-600 dark:text-cyan-300',
-    points: [
-      'Promote Skills Job programs and career development opportunities.',
-      'Support public relations activities and community engagement.',
-      'Develop communication, networking, and leadership skills.',
-    ],
-  },
   {
     role: 'Frontend Developer',
     organization: 'Self-Learning',
