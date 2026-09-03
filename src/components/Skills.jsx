@@ -2,38 +2,66 @@ import React from 'react';
 import { motion } from 'framer-motion';
 import PortfolioBackground from './PortfolioBackground';
 import {
-  Code2,
   Database,
   GraduationCap,
-  Globe,
-  Terminal,
+  MonitorSmartphone,
 } from 'lucide-react';
+import {
+  SiC,
+  SiCplusplus,
+  SiCss,
+  SiGit,
+  SiGithub,
+  SiHtml5,
+  SiJavascript,
+  SiMysql,
+  SiPython,
+  SiReact,
+  SiReactrouter,
+  SiTailwindcss,
+  SiVscodium,
+} from 'react-icons/si';
+import { FaJava } from 'react-icons/fa6';
 
 const Skills = () => {
   const skillGroups = [
     {
       title: 'Frontend Development',
-      icon: <Globe size={22} />,
       skills: [
-        'React.js',
-        'JavaScript',
-        'Tailwind CSS',
-        'HTML5',
-        'CSS3',
-        'Responsive Design',
+        { name: 'React.js', icon: SiReact, color: '#61DAFB' },
+        { name: 'JavaScript', icon: SiJavascript, color: '#F7DF1E' },
+        { name: 'Tailwind CSS', icon: SiTailwindcss, color: '#06B6D4' },
+        { name: 'HTML5', icon: SiHtml5, color: '#E34F26' },
+        { name: 'CSS3', icon: SiCss, color: '#1572B6' },
+        {
+          name: 'Responsive Design',
+          icon: MonitorSmartphone,
+          color: '#2563EB',
+        },
       ],
     },
     {
       title: 'Programming Languages',
-      icon: <Code2 size={22} />,
-      skills: ['C', 'C++', 'Java', 'Python'],
+      skills: [
+        { name: 'C', icon: SiC, color: '#A8B9CC' },
+        { name: 'C++', icon: SiCplusplus, color: '#00599C' },
+        { name: 'Java', icon: FaJava, color: '#ED8B00' },
+        { name: 'Python', icon: SiPython, color: '#3776AB' },
+      ],
     },
     {
       title: 'Tools & Technologies',
-      icon: <Terminal size={22} />,
-      skills: ['Git', 'GitHub', 'VS Code', 'MySQL', 'React Router'],
+      skills: [
+        { name: 'Git', icon: SiGit, color: '#F05032' },
+        { name: 'GitHub', icon: SiGithub, color: '#181717' },
+        { name: 'VS Code', icon: SiVscodium, color: '#007ACC' },
+        { name: 'MySQL', icon: SiMysql, color: '#4479A1' },
+        { name: 'React Router', icon: SiReactrouter, color: '#CA4245' },
+      ],
     },
   ];
+
+  const allSkills = skillGroups.flatMap((group) => group.skills);
 
   const learning = [
     'Advanced React.js',
@@ -81,27 +109,52 @@ const Skills = () => {
               transition={{ delay: index * 0.1, duration: 0.5 }}
               className="p-6 rounded-lg bg-white border border-slate-200 shadow-sm hover:shadow-xl hover:-translate-y-2 hover:border-cyan-400 transition-all duration-300 dark:bg-white/10 dark:border-white/10"
             >
-              <div className="w-14 h-14 rounded-lg bg-cyan-50 border border-cyan-200 flex items-center justify-center text-cyan-500 mb-6 dark:bg-cyan-400/10 dark:border-cyan-400/30 dark:text-cyan-200">
-                {group.icon}
-              </div>
-
-              <h3 className="text-slate-950 dark:text-white text-xl font-semibold mb-6">
+              <h3 className="text-slate-950 dark:text-white text-xl font-semibold mb-8">
                 {group.title}
               </h3>
 
               <div className="flex flex-wrap gap-3">
-                {group.skills.map((skill) => (
+                {group.skills.map(({ name, icon: SkillIcon, color }) => (
                   <span
-                    key={skill}
-                    className="px-4 py-2 rounded-lg bg-slate-50 border border-slate-200 text-slate-700 text-sm font-medium hover:border-cyan-500 hover:text-cyan-600 hover:bg-cyan-50 transition-all duration-300 dark:bg-white/5 dark:border-white/10 dark:text-slate-300 dark:hover:text-cyan-200"
+                    key={name}
+                    className="flex h-20 w-24 flex-col items-center justify-center gap-1.5 rounded-lg border border-slate-200 bg-slate-50 px-2 py-2 text-center text-xs font-semibold leading-tight text-slate-700 transition-all duration-300 hover:border-cyan-500 hover:bg-cyan-50 hover:text-cyan-600 dark:border-white/10 dark:bg-white/5 dark:text-slate-300 dark:hover:text-cyan-200"
                   >
-                    {skill}
+                    <SkillIcon size={26} color={color} aria-hidden="true" />
+                    <span>{name}</span>
                   </span>
                 ))}
               </div>
             </motion.div>
           ))}
         </div>
+
+        <motion.div
+          initial={{ opacity: 0, y: 20 }}
+          whileInView={{ opacity: 1, y: 0 }}
+          viewport={{ once: true }}
+          transition={{ delay: 0.2 }}
+          className="mt-10 flex flex-col gap-4 overflow-hidden rounded-lg border border-slate-200 bg-white px-5 py-5 shadow-sm dark:border-white/10 dark:bg-white/10 sm:flex-row sm:items-center sm:gap-5"
+        >
+          <div className="shrink-0 border-b border-slate-200 pb-3 text-center text-xs font-black uppercase tracking-[0.18em] text-cyan-600 dark:border-white/10 dark:text-cyan-300 sm:border-b-0 sm:border-r sm:pb-0 sm:pr-5">
+            Technologies I Work With
+          </div>
+
+          <div className="min-w-0 overflow-hidden" aria-label="Technologies I work with">
+            <div className="skills-marquee-track flex w-max items-center gap-7 pr-7">
+              {[...allSkills, ...allSkills].map(({ name, icon: SkillIcon, color }, index) => (
+                <div
+                  key={`${name}-${index}`}
+                  className="flex min-w-18 flex-col items-center gap-1.5 text-center"
+                >
+                  <SkillIcon size={34} color={color} aria-hidden="true" />
+                  <span className="text-[10px] font-semibold text-slate-600 dark:text-slate-300">
+                    {name}
+                  </span>
+                </div>
+              ))}
+            </div>
+          </div>
+        </motion.div>
 
         <motion.div
           initial={{ opacity: 0, y: 20 }}
