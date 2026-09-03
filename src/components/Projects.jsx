@@ -2,11 +2,13 @@ import React from 'react';
 import { motion } from 'framer-motion';
 import PortfolioBackground from './PortfolioBackground';
 import {
+  BrainCircuit,
   Terminal,
   Globe,
   Layers,
   Github,
   ExternalLink,
+  Image,
   Search,
 } from 'lucide-react';
 
@@ -14,12 +16,41 @@ const githubProfile = 'https://github.com/ruhulamin18';
 
 const Projects = () => {
   const projects = [
+    
+    {
+      title: 'AI GitHub Portfolio Analyzer',
+      category: 'Full Stack / AI Web Application',
+      status: 'Gemini AI powered',
+      description:
+        'AI-powered full-stack web application that analyzes GitHub portfolios, evaluates repository health, identifies skill gaps, and provides personalized career insights using Google Gemini AI.',
+      tech: ['React', 'Full Stack', 'Google Gemini AI', 'GitHub API'],
+      icon: <BrainCircuit size={22} />,
+      image:
+        'https://images.unsplash.com/photo-1677442136019-21780ecad995?w=800&q=80',
+      github: 'https://github.com/ruhulamin18/ai-github-portfolio-analyzer',
+      live: 'https://ai-github-portfolio-analyzer.vercel.app/',
+    },
+
+    {
+      title: 'Purabi General Insurance Digital Portal',
+      category: 'Frontend / Insurance Platform',
+      status: 'Enterprise portal',
+      description:
+        'Modern React-based digital insurance platform for instant quotations, health plan comparison, claim tracking, and secure payment workflows with a responsive, enterprise-focused user experience.',
+      tech: ['React', 'JavaScript', 'Responsive UI', 'Payment Workflows'],
+      icon: <Globe size={22} />,
+      image:
+        'https://images.unsplash.com/photo-1450101499163-c8848c66ca85?w=800&q=80',
+      github: 'https://github.com/ruhulamin18/purabi-insurance-portal',
+      live: 'https://purabi-insurance-portal.vercel.app',
+    },
+
     {
       title: 'GitHub Workspace',
       category: 'Full Stack / React Web Application',
       status: 'Mini GitHub client',
       description:
-        'A React-based mini GitHub client for exploring developers, repositories, collections, favorites, activity, notifications, and personalized settings through a clean interactive interface.',
+        ' Modern React-based GitHub workspace for exploring repositories, developer profiles, and GitHub data with search, favorites, collections, authentication, notifications, and personalized dashboard features.',
       tech: [
         'React',
         'Vite',
@@ -28,16 +59,11 @@ const Projects = () => {
         'Context API',
         'GitHub REST API',
       ],
-      features: [
-        'Fake auth with login and register flow',
-        'User, repository, and advanced filtered search',
-        'Favorites, collections, activity feed, and settings',
-      ],
       icon: <Search size={22} />,
       image:
         'https://images.unsplash.com/photo-1618477388954-7852f32655ec?w=800&q=80',
       github: 'https://github.com/ruhulamin18/github-workspace',
-      live: null,
+      live: 'https://github-workspace-ruhulamin18.vercel.app/',
     },
 
     {
@@ -50,8 +76,50 @@ const Projects = () => {
       icon: <Layers size={22} />,
       image:
         'https://images.unsplash.com/photo-1461749280684-dccba630e2f6?w=800&q=80',
-      github: githubProfile,
-      live: null,
+      github: 'https://github.com/ruhulamin18/Portfolio',
+      live: 'https://mdruhulamin18.vercel.app',
+    },
+
+    {
+      title: 'Dhaka Metro Rail 3D Simulation',
+      category: '3D Graphics / OpenGL Simulation',
+      status: 'MRT Line-6 simulation',
+      description:
+        'Interactive 3D Dhaka Metro Rail (MRT Line-6) simulation built with C and OpenGL, featuring a moving train, station and city environments, day/night modes, animation, lighting, and interactive camera controls.',
+      tech: ['C', 'OpenGL', '3D Graphics', 'Animation'],
+      icon: <Globe size={22} />,
+      image:
+        'https://images.unsplash.com/photo-1514565131-fce0801e5785?w=800&q=80',
+      github: 'https://github.com/ruhulamin18/MRT-6-Metro-Simulation',
+      live: 'https://www.youtube.com/watch?v=kjZAIXfnf2w',
+    },
+
+    {
+      title: 'FrameCraft',
+      category: 'Frontend / JavaScript Web Application',
+      status: 'Photography gallery',
+      description:
+        'Premium photography gallery built with vanilla JavaScript, featuring responsive layouts, category filtering, search, favorites, fullscreen lightbox, slideshow mode, and EXIF-style image details.',
+      tech: ['HTML', 'CSS', 'Vanilla JavaScript', 'Responsive UI'],
+      icon: <Image size={22} />,
+      image:
+        'https://images.unsplash.com/photo-1452780212940-6f5c0d14d848?w=800&q=80',
+      github: 'https://github.com/ruhulamin18/CodeAlpha-image-gallery',
+      live: 'https://framecraft-image-gallery.vercel.app',
+    },
+    
+    {
+      title: 'Parking Management System',
+      category: 'Software Development',
+      status: 'Academic',
+      description:
+        'Developed a parking management system to manage vehicle entry, exit, and parking records. Integrated SQLite for efficient data storage and parking record management.',
+      tech: ['Python', 'SQLite'],
+      icon: <Terminal size={22} />,
+      image:
+        'https://images.unsplash.com/photo-1506521781263-d8422e82f27a?w=800&q=80',
+      github: 'https://github.com/ruhulamin18/ParkingManagementSystem',
+      live: 'https://parkingmanagementsystem-n6wf.onrender.com/',
     },
 
     {
@@ -64,8 +132,22 @@ const Projects = () => {
       icon: <Terminal size={22} />,
       image:
         'https://images.unsplash.com/photo-1522202176988-66273c2fd55f?w=800&q=80',
-      github: githubProfile,
+      github: 'https://github.com/ruhulamin18/Student-Management-System',
       live: null,
+    },
+
+    {
+      title: 'DayList – Smart To-Do App',
+      category: 'Frontend / React Web Application',
+      status: 'Productivity app',
+      description:
+        'Modern and responsive React-based task management app for organizing daily tasks with categories, priorities, search, filtering, progress tracking, dark mode, and local storage persistence.',
+      tech: ['React', 'JavaScript', 'Responsive UI', 'Local Storage'],
+      icon: <Layers size={22} />,
+      image:
+        'https://images.unsplash.com/photo-1484480974693-6ca0a78fb36b?w=800&q=80',
+      github: 'https://github.com/ruhulamin18/To-Do-List',
+      live: 'https://to-do-list-five-rust.vercel.app/',
     },
 
     {
@@ -82,19 +164,6 @@ const Projects = () => {
       live: null,
     },
 
-    {
-      title: 'NeuroGuard AI',
-      category: 'Machine Learning',
-      status: 'Healthcare AI',
-      description:
-        'A machine learning-based mortality prediction system for critically ill patients using healthcare datasets, risk analysis, and predictive analytics.',
-      tech: ['Machine Learning', 'Python', 'Healthcare AI'],
-      icon: <Layers size={22} />,
-      image:
-        'https://images.unsplash.com/photo-1576091160550-2173dba999ef?w=800&q=80',
-      github: githubProfile,
-      live: null,
-    },
 
     {
       title: 'Library Management System',
@@ -109,48 +178,7 @@ const Projects = () => {
       github: githubProfile,
       live: null,
     },
-
-    {
-      title: 'Parking Management System',
-      category: 'Software Development',
-      status: 'Academic',
-      description:
-        'Developed a parking management system to manage vehicle entry, exit, and parking records. Integrated SQLite for efficient data storage and parking record management.',
-      tech: ['Python', 'SQLite'],
-      icon: <Terminal size={22} />,
-      image:
-        'https://images.unsplash.com/photo-1506521781263-d8422e82f27a?w=800&q=80',
-      github: githubProfile,
-      live: null,
-    },
-
-    {
-      title: 'Mobile Banking User Churn Analysis',
-      category: 'Machine Learning',
-      status: 'Data project',
-      description:
-        'A machine learning project focused on predicting customer churn in mobile banking services using data analysis and predictive modeling techniques.',
-      tech: ['Python', 'Machine Learning', 'Data Analysis'],
-      icon: <Layers size={22} />,
-      image:
-        'https://images.unsplash.com/photo-1556740749-887f6717d7e4?w=800&q=80',
-      github: githubProfile,
-      live: null,
-    },
-
-    {
-      title: 'Logistic Regression Research Project',
-      category: 'Research & Data Science',
-      status: 'Research',
-      description:
-        'A research-oriented project applying Logistic Regression for predictive analysis and classification tasks using real-world datasets.',
-      tech: ['Python', 'Logistic Regression', 'Research'],
-      icon: <Globe size={22} />,
-      image:
-        'https://images.unsplash.com/photo-1516321318423-f06f85e504b3?w=800&q=80',
-      github: githubProfile,
-      live: null,
-    },
+    
   ];
 
   return (
