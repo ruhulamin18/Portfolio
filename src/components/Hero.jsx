@@ -13,10 +13,10 @@ const Hero = () => {
   ];
 
   const stats = [
-    { number: '10+', label: 'Projects Completed' },
-    { number: '10+', label: 'Technologies' },
-    { number: '4th', label: 'Year CSE Student' },
+    { number: '12+', label: 'Projects Built' },
+    { number: '8+', label: 'Live Demos' },
     { number: '3.64', label: 'Current CGPA' },
+    { number: '360h', label: 'Technical Training' },
   ];
 
   return (

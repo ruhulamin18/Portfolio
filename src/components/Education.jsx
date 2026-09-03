@@ -17,7 +17,7 @@ const educationItems = [
     degree: 'B.Sc. in Computer Science and Engineering',
     institution: 'Daffodil International University',
     status: 'Current Status: 4th Year',
-    result: 'SGPA: 3.64',
+    result: 'SGPA: 3.64 out of 4.00',
     location: 'Dhaka, Bangladesh',
     icon: GraduationCap,
     logo: diuLogo,
