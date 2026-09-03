@@ -27,7 +27,7 @@ const Hero = () => {
       <PortfolioBackground variant="hero" />
 
       <div className="relative z-10 mx-auto w-full max-w-7xl px-6 pb-20">
-        <div className="grid lg:grid-cols-2 gap-16 items-center">
+        <div className="grid items-center gap-16 lg:grid-cols-[1.3fr_0.7fr]">
           <motion.div
             initial={{ opacity: 0, x: -30 }}
             animate={{ opacity: 1, x: 0 }}
@@ -51,12 +51,15 @@ const Hero = () => {
             </h1>
 
             <p className="mx-auto mb-8 max-w-3xl text-xl font-medium leading-relaxed text-slate-700 dark:text-slate-300 md:text-2xl lg:mx-0">
-              Aspiring Software Engineer | Frontend Developer | Machine
-              Learning Enthusiast | Building Innovative Digital Solutions
+              Aspiring Software Engineer | Frontend Developer
             </p>
 
-            <div className="mx-auto mb-10 max-w-[68ch] text-base leading-[1.9] text-slate-600 dark:text-slate-400 sm:text-lg lg:mx-0">
-              <p className="text-justify md:text-justify sm:text-left">
+            <p className="mx-auto -mt-3 mb-8 max-w-2xl text-base italic leading-relaxed text-slate-600 dark:text-slate-400 md:text-lg lg:mx-0 lg:whitespace-nowrap">
+              Focused on creating responsive, scalable, and user-centric digital experiences.
+            </p>
+
+            <div className="mx-auto mb-10 max-w-none text-base leading-[1.9] text-slate-600 dark:text-slate-400 sm:text-lg lg:mx-0">
+              <p className="text-justify">
                 I'm a Computer Science and Engineering student with a passion for building modern, responsive, and user-centric web applications. Skilled in React.js, Tailwind CSS, JavaScript, Python, and MySQL, I enjoy solving real-world problems through clean and efficient code. I'm currently seeking an internship or entry-level Software Engineer or Frontend Developer role where I can contribute to impactful projects while continuously expanding my technical expertise.
               </p>
             </div>
